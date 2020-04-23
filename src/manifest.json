@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sketch-hq/SketchAPI/develop/docs/sketch-plugin-manifest-schema.json",
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "Update Icon",
+      "identifier": "coding-toolkit.update-icon",
+      "script": "./update-icon.js"
+    },
+    {
+      "name": "Generate Icon Library Collection",
+      "identifier": "coding-toolkit.generate-icons-collection",
+      "script": "./generate-icons-collection.js"
+    }
+  ],
+  "menu": {
+    "title": "🐤 CODING Toolkit",
+    "items": [
+      "coding-toolkit.update-icon",
+      "coding-toolkit.generate-icons-collection"
+    ]
+  }
+}
