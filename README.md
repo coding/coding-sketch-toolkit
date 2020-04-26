@@ -1,4 +1,15 @@
-# CODING Toolkit
+# CODING Toolkit Sketch Plugin
+
+<img src='https://user-images.githubusercontent.com/5106039/80296781-61060600-87b0-11ea-8dd4-d9a15d29d9cd.png' width='674px'>
+
+## 插件命令
+
+### 1. Update Icon 升级图标
+用于替换旧版 CODING Icon 至新版 CODING Icon，在设计稿中选中来自旧版的 CODING Icon Library 的 symbol 然后执行此命令即可自动替换为对应的新版 CODING ICON，并且保留原来 icon 覆盖的颜色。
+
+### 2. Genrarte Icon Library Collection 生成图标合集
+用与在 CODING Icon Library 文件中修改或添加 icon 后重新生成 icon 集合，以便在 Abstract 中查找 icon。执行此命令将会自动删除原 Page 1 中的 icon collection 画板然后重新生成新的画板。
+更新 CODING Icon 的具体方法请查看此 [Wiki](https://codingcorp.coding.net/p/Design-Center/wiki/1495)
 
 ## Installation
 
@@ -36,33 +47,6 @@ Additionally, if you wish to run the plugin every time it is built:
 npm run start
 ```
 
-### Custom Configuration
-
-#### Babel
-
-To customize Babel, you have two options:
-
-- You may create a [`.babelrc`](https://babeljs.io/docs/usage/babelrc) file in your project's root directory. Any settings you define here will overwrite matching config-keys within skpm preset. For example, if you pass a "presets" object, it will replace & reset all Babel presets that skpm defaults to.
-
-- If you'd like to modify or add to the existing Babel config, you must use a `webpack.skpm.config.js` file. Visit the [Webpack](#webpack) section for more info.
-
-#### Webpack
-
-To customize webpack create `webpack.skpm.config.js` file which exports function that will change webpack's config.
-
-```js
-/**
- * Function that mutates original webpack config.
- * Supports asynchronous changes when promise is returned.
- *
- * @param {object} config - original webpack config.
- * @param {boolean} isPluginCommand - whether the config is for a plugin command or a resource
- **/
-module.exports = function(config, isPluginCommand) {
-  /** you can change config here **/
-}
-```
-
 ### Debugging
 
 To view the output of your `console.log`, you have a few different options:
@@ -80,13 +64,3 @@ skpm publish <bump>
 
 `skpm publish` will create a new release on your GitHub repository and create an appcast file in order for Sketch users to be notified of the update.
 
-You will need to specify a `repository` in the `package.json`:
-
-```diff
-...
-+ "repository" : {
-+   "type": "git",
-+   "url": "git+https://github.com/ORG/NAME.git"
-+  }
-...
-```

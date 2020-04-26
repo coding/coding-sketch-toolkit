@@ -23,5 +23,9 @@
   "devDependencies": {
     "@skpm/builder": "^0.7.0"
   },
-  "author": "tankxu <xutan@coding.net>"
+  "author": "tankxu <xutan@coding.net>",
+  "repository" : {
+   "type": "git",
+   "url": "git+https://github.com/Coding/coding-sketch-toolkit.git"
+  }
 }
