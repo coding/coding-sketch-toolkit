@@ -1,4 +1,4 @@
-import sketch from 'sketch'
+const sketch = require('sketch')
 
 export default function() {
   const document = sketch.getSelectedDocument()

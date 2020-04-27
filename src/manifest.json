@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/sketch-hq/SketchAPI/develop/docs/sketch-plugin-manifest-schema.json",
   "icon": "icon.png",
+  "suppliesData": true,
   "commands": [
     {
       "name": "Update Icon",
@@ -16,6 +17,16 @@
       "name": "Create Symbol Instance",
       "identifier": "coding-toolkit.create-symbol-instance",
       "script": "./dev-library/create-symbol-instance.js"
+    },
+    {
+      "script": "data-supplier.js",
+      "handlers": {
+        "actions": {
+          "Startup": "onStartup",
+          "Shutdown": "onShutdown",
+          "SupplyProjectName": "onSupplyProjectName"
+        }
+      }
     }
   ],
   "menu": {
