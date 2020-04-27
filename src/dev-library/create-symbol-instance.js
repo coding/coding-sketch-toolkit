@@ -25,6 +25,6 @@ export default function() {
 
   // Show the layers which not symbol
   if (notSymbolArrary.length > 0 ) {
-    sketch.UI.message(`‼️ Error: '${notSymbolArrary.join(', ')}' is not a symbol !`)
+    sketch.UI.message(`‼️ Error: Layer '${notSymbolArrary.join(', ')}' not symbol!`)
   }
 }
