@@ -10,14 +10,25 @@
     {
       "name": "Generate Icon Library Collection",
       "identifier": "coding-toolkit.generate-icons-collection",
-      "script": "./generate-icons-collection.js"
+      "script": "./dev-library/generate-icons-collection.js"
+    },
+    {
+      "name": "Create Symbol Instance",
+      "identifier": "coding-toolkit.create-symbol-instance",
+      "script": "./dev-library/create-symbol-instance.js"
     }
   ],
   "menu": {
     "title": "🐤 CODING Toolkit",
     "items": [
       "coding-toolkit.update-icon",
-      "coding-toolkit.generate-icons-collection"
+      {
+        "title": "Dev Library",
+        "items": [
+          "coding-toolkit.generate-icons-collection",
+          "coding-toolkit.create-symbol-instance"
+        ]
+      }
     ]
   }
 }
