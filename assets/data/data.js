@@ -1,7 +1,9 @@
 const dataProjectName = require('./project-name.json')
+const dataCommitId = require('./commit-id.json')
 
 const dataCollection = [
-  dataProjectName
+  dataProjectName,
+  dataCommitId,
 ]
 
-export default dataCollection
+export { dataCollection }

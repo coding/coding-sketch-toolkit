@@ -24,7 +24,9 @@
         "actions": {
           "Startup": "onStartup",
           "Shutdown": "onShutdown",
-          "SupplyProjectName": "onSupplyProjectName"
+          "SupplyProjectName": "onSupplyProjectName",
+          "SupplyCommitId": "onSupplyCommitId",
+          "SupplyCommitIdSort": "onSupplyCommitIdSort"
         }
       }
     }
