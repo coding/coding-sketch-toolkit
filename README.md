@@ -15,9 +15,24 @@ Dev Library 分类中的命令主要用于开发 Sketch Library 时使用。
 ### 3. Create Symbol Instance 通过选中的 Symbol Master 创建 Instance
 选中一个或多个 Symbol Master 后执行此命令，可自动在 Symbol Master 下方创建对应的 instance，用于快速预览和检查 Symbol Master 的使用效果与 Overrides 配置。
 
+
+## Data Supplier
+
+目前支持随机填充以下 Text 内容：
+
+- Project Name
+- User Name
+- Commit Id
+- Commit Id - Sort
+
 ## Installation
 
-- [Download](../../releases/latest/download/coding-toolkit.sketchplugin.zip) the latest release of the plugin
+### 1. Install with [Sketch Runner](https://sketchrunner.com)
+<img width="856" src="https://user-images.githubusercontent.com/5106039/84228475-ae98c100-ab19-11ea-88a7-d93d42c2b33e.png">
+
+### 2. Download from release
+
+- [Download](https://github.com/Coding/coding-sketch-toolkit/releases/latest/download/coding-toolkit.sketchplugin.zip) the latest release of the plugin
 - Un-zip
 - Double-click on coding-toolkit.sketchplugin
 
