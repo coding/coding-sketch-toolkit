@@ -25,6 +25,7 @@
           "Startup": "onStartup",
           "Shutdown": "onShutdown",
           "SupplyProjectName": "onSupplyProjectName",
+          "SupplyUserName": "onSupplyUserName",
           "SupplyCommitId": "onSupplyCommitId",
           "SupplyCommitIdSort": "onSupplyCommitIdSort"
         }
@@ -35,6 +36,7 @@
     "title": "🐤 CODING Toolkit",
     "items": [
       "coding-toolkit.update-icon",
+      "coding-toolkit.link-coding-library",
       {
         "title": "Dev Library",
         "items": [

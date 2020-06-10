@@ -4,38 +4,54 @@ const DataSupplier = require('sketch/data-supplier')
 const { dataCollection } = require('../assets/data/data.js')
 const _ = require('lodash')
 
-const getDataByName = dataName => _.shuffle(dataCollection.find(data => data.name == dataName).items)
-
 export function onStartup() {
+  // DataSupplier.registerDataSupplier("public.image", "Project Avatar", "SupplyProjectAvatar")
+  // DataSupplier.registerDataSupplier("public.image", "User Avatar", "SupplyUserAvatar")
   DataSupplier.registerDataSupplier("public.text", "Project Name", "SupplyProjectName")
+  DataSupplier.registerDataSupplier("public.text", "User Name", "SupplyUserName")
   DataSupplier.registerDataSupplier("public.text", "Commit Id", "SupplyCommitId")
-  DataSupplier.registerDataSupplier("public.text", "Commit Id Sort", "SupplyCommitIdSort")
+  DataSupplier.registerDataSupplier("public.text", "Commit Id - Sort", "SupplyCommitIdSort")
 }
 
 export function onShutdown() { 
   DataSupplier.deregisterDataSuppliers()
 }
 
+// export function onSupplyProjectAvatar(context) {
+//   supplyRandomData(context, getDataByName('project avatar'))
+// }
+
+// export function onSupplyUserAvatar(context) {
+//   supplyRandomData(context, getDataByName('user avatar'))
+// }
+
 export function onSupplyProjectName(context) {
-  supplyData(context, 'project name')
+  supplyRandomData(context, getDataByName('project name'))
+}
+
+export function onSupplyUserName(context) {
+  supplyRandomData(context, getDataByName('user name'))
 }
 
 export function onSupplyCommitId(context) {
-  supplyData(context, 'commit id')
+  supplyRandomData(context, getDataByName('commit id'))
 }
 
 export function onSupplyCommitIdSort(context) {
   let handleData = data => data.slice(0, 7)
-  supplyData(context, 'commit id', handleData)
+  supplyRandomData(context, getDataByName('commit id'), handleData)
 }
 
-function supplyData(context, dataName, handleData = data => data) {
+const getDataByName = dataName => _.shuffle(dataCollection.find(data => data.name == dataName).items)
+
+const supplyRandomData = (context, dataArray, handleData = data => data) => {
   let key = context.data.key
   let items = util.toArray(context.data.items).map(sketch.fromNative)
-  let dataItems = getDataByName(dataName)
   items.map((item, i) => {
-    console.log(`${i} - ${item.symbolInstance.name}`)
-    let dataValue = handleData(dataItems[i % dataItems.length])
+    (item.symbolInstance) ? 
+      console.log(`${i} - ${item.symbolInstance.name}`) :
+      console.log(`${i} - ${item.name}`)
+    let dataValue = handleData(dataArray[i % dataArray.length])
     DataSupplier.supplyDataAtIndex(key, dataValue, i)
   })
 }
