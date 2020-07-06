@@ -8,7 +8,7 @@ Dev Library 分类中的命令主要用于开发 Sketch Library 时使用。
 ### 1. Update Icon 升级图标
 用于替换旧版 CODING Icon 至新版 CODING Icon，在设计稿中选中来自旧版的 CODING Icon Library 的 symbol 然后执行此命令即可自动替换为对应的新版 CODING ICON，并且保留原来 icon 覆盖的颜色。
 
-### 2. Genrarte Icon Library Collection 生成图标合集
+### 2. Generate Icon Library Collection 生成图标合集
 用与在 CODING Icon Library 文件中修改或添加 icon 后重新生成 icon 集合，以便在 Abstract 中查找 icon。执行此命令将会自动删除原 Page 1 中的 icon collection 画板然后重新生成新的画板。
 更新 CODING Icon 的具体方法请查看此 [Wiki](https://codingcorp.coding.net/p/Design-Center/wiki/1495)
 
