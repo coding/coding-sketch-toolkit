@@ -19,9 +19,9 @@
       "script": "./dev-library/create-symbol-instance.js"
     },
     {
-      "name": "Push New Icon To UIKit",
-      "identifier": "coding-toolkit.push-new-icon-to-uikit",
-      "script": "./dev-library/push-new-icon-to-uikit.js"
+      "name": "Publish New Icon To UIKit",
+      "identifier": "coding-toolkit.publish-new-icon-to-uikit",
+      "script": "./dev-library/publish-new-icon-to-uikit.js"
     },
     {
       "script": "data-supplier.js",
@@ -47,7 +47,7 @@
         "items": [
           "coding-toolkit.generate-icons-collection",
           "coding-toolkit.create-symbol-instance",
-          "coding-toolkit.push-new-icon-to-uikit"
+          "coding-toolkit.publish-new-icon-to-uikit"
         ]
       }
     ]
