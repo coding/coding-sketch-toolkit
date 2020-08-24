@@ -5,8 +5,8 @@ export default function() {
   const selection = document.selectedLayers.layers
   const Settings = sketch.Settings
 
-  const ciToken = Settings.documentSettingForKey(document, 'ci-token')
-  const ciUrl = Settings.documentSettingForKey(document, 'ci-url')
+  let ciToken = Settings.settingForKey('ci-token')
+  let ciUrl = 'https://codingcorp.coding.net/api/cci/job/252169/trigger'
 
   function postIcon(iconCatalog, iconName, iconCode) {
     console.log(iconCatalog)
@@ -47,7 +47,7 @@ export default function() {
     )
   }
 
-  if (ciToken) {
+  function main() {
     let iconCatalog = []
     let iconName = []
     let iconCode = []
@@ -61,8 +61,27 @@ export default function() {
       iconCode.push(sketchSVG.toString())
     })
     postIcon(JSON.stringify(iconCatalog).toString(), JSON.stringify(iconName).toString(), JSON.stringify(iconCode).toString())
+  }
+
+  if (ciToken) {
+    main()
   } else {
-    console.log('The ci-token setting not found in this document! Make sure your current docmuent is Coding-Icons Library.')
-    sketch.UI.alert('⛔️ Wrong File!', 'The ci-token setting not found in this document! \nPlease make sure current docmuent is the Coding-Icons Library.')
+    sketch.UI.getInputFromUser(
+      "第一次使用需填写 CI 触发令牌",
+      {
+        description: '访问此链接获取令牌 https://codingcorp.coding.net/p/Design-Center/wiki/1495',
+        initialValue: '在此输入',
+      },
+      (err, value) => {
+        if (err) {
+          sketch.UI.message('Publish has been canceled.')
+          return
+        }
+        Settings.setSettingForKey('ci-token', value)
+        ciToken = Settings.settingForKey('ci-token')
+        sketch.UI.message('Publish start ...')
+        main()
+      }
+    )
   }
 }
